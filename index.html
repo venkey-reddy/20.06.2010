@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>A Little Something For Kavya ✨</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Something for you Kavya ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Background -->
-    <div class="stars"></div>
+    <!-- Floating hearts -->
+    <div class="heart-container"></div>
 
-    <!-- INTRO -->
+
+    <!-- Background music -->
+    <!-- Put your own legally obtained audio file in this folder -->
+    <audio id="bgMusic" preload="auto">
+        <source src="metro-proposal.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- ========================= -->
+    <!-- INTRO SCREEN -->
+    <!-- ========================= -->
+
     <section class="screen active" id="intro">
 
         <div class="content">
 
-            <div class="moon">🌙</div>
+            <div class="love-icon">
+                ♡
+            </div>
 
-            <p class="tiny">A little secret...</p>
+            <p class="tiny">
+                A little secret...
+            </p>
 
             <h1>
                 Kavya,<br>
@@ -42,12 +60,17 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- QUESTION 1 -->
+    <!-- ========================= -->
+
     <section class="screen" id="question1">
 
         <div class="content">
 
-            <div class="number">01</div>
+            <div class="number">
+                01
+            </div>
 
             <h2>
                 Imagine you suddenly<br>
@@ -79,12 +102,17 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- QUESTION 2 -->
+    <!-- ========================= -->
+
     <section class="screen" id="question2">
 
         <div class="content">
 
-            <div class="number">02</div>
+            <div class="number">
+                02
+            </div>
 
             <h2>
                 Okay... one more.
@@ -115,12 +143,16 @@
     </section>
 
 
-    <!-- REVEAL -->
+    <!-- ========================= -->
+    <!-- ENVELOPE REVEAL -->
+    <!-- ========================= -->
+
     <section class="screen" id="reveal">
 
         <div class="content">
 
-            <div class="envelope" onclick="openLetter()">
+            <div class="envelope"
+                 onclick="openLetter()">
 
                 <div class="envelope-top"></div>
 
@@ -143,22 +175,27 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- LETTER -->
+    <!-- ========================= -->
+
     <section class="screen" id="letter">
 
         <div class="letter">
 
             <div class="paper">
 
-                <div class="flower">🌷</div>
+                <div class="flower">
+                    🌷
+                </div>
 
                 <h2>
                     Dear Kavya,
                 </h2>
 
                 <p>
-                    Okay... here's the actual reason
-                    I made this little website.
+                
+                    you are special to me 
                 </p>
 
                 <p>
@@ -188,7 +225,10 @@
     </section>
 
 
-    <!-- FINAL -->
+    <!-- ========================= -->
+    <!-- FINAL SCREEN -->
+    <!-- ========================= -->
+
     <section class="screen" id="final">
 
         <div class="content final-content">
@@ -227,4 +267,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
