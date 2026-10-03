@@ -1,5 +1,5 @@
 /* =========================
-   SCREEN CHANGER
+   SCREEN CHANGE
 ========================= */
 
 function changeScreen(current, next) {
@@ -27,39 +27,37 @@ function changeScreen(current, next) {
 
 function startExperience() {
 
-    /*
-       The music starts only after the
-       user taps the button.
-
-       This is important for mobile
-       browser autoplay restrictions.
-    */
-
     const music =
         document.getElementById("bgMusic");
 
 
+    /*
+       Start music after the user
+       directly taps the button.
+    */
+
     music.volume = 0.65;
 
 
-    music.play().catch(() => {
+    music.play().catch((error) => {
 
         console.log(
-            "Music could not start automatically."
+            "Audio could not start:",
+            error
         );
 
     });
 
 
     /*
-       Start the floating hearts.
+       Start hearts.
     */
 
-    createHearts();
+    startHeartAnimation();
 
 
     /*
-       Move to first question.
+       Move to Question 1.
     */
 
     changeScreen(
@@ -147,10 +145,26 @@ function finalReveal() {
 
 
 /* =========================
-   FLOATING HEARTS
+   HEART ANIMATION
 ========================= */
 
-function createHearts() {
+let heartsStarted = false;
+
+
+function startHeartAnimation() {
+
+    /*
+       Prevent multiple intervals
+       if the function is called again.
+    */
+
+    if (heartsStarted) {
+        return;
+    }
+
+
+    heartsStarted = true;
+
 
     const container =
         document.querySelector(
@@ -159,8 +173,7 @@ function createHearts() {
 
 
     /*
-       Create a new heart
-       every 450 milliseconds.
+       Create hearts continuously.
     */
 
     setInterval(() => {
@@ -174,8 +187,7 @@ function createHearts() {
 
 
         /*
-           Randomly choose a
-           filled or outline heart.
+           Filled or outline heart.
         */
 
         heart.innerHTML =
@@ -185,15 +197,17 @@ function createHearts() {
 
 
         /*
-           Random horizontal position.
+           Random horizontal
+           starting position.
         */
 
         heart.style.left =
-            Math.random() * 100 + "vw";
+            Math.random() * 100 +
+            "vw";
 
 
         /*
-           Random heart size.
+           Random size.
         */
 
         const size =
@@ -206,7 +220,7 @@ function createHearts() {
 
 
         /*
-           Random floating speed.
+           Random speed.
         */
 
         heart.style.animationDuration =
@@ -216,30 +230,34 @@ function createHearts() {
 
 
         /*
-           Random sideways movement.
+           Random sideways
+           movement.
         */
 
         heart.style.setProperty(
             "--drift1",
-            (-40 +
-                Math.random() * 80) +
-            "px"
+            (
+                -40 +
+                Math.random() * 80
+            ) + "px"
         );
 
 
         heart.style.setProperty(
             "--drift2",
-            (-70 +
-                Math.random() * 140) +
-            "px"
+            (
+                -70 +
+                Math.random() * 140
+            ) + "px"
         );
 
 
         heart.style.setProperty(
             "--drift3",
-            (-120 +
-                Math.random() * 240) +
-            "px"
+            (
+                -120 +
+                Math.random() * 240
+            ) + "px"
         );
 
 
@@ -249,8 +267,7 @@ function createHearts() {
 
 
         /*
-           Remove the heart after
-           the animation finishes.
+           Delete after animation.
         */
 
         setTimeout(() => {
@@ -265,7 +282,7 @@ function createHearts() {
 
 
 /* =========================
-   SPARKLE EFFECT
+   SPARKLES
 ========================= */
 
 function createSparkles() {
@@ -336,11 +353,11 @@ function createSparkles() {
    SPARKLE ANIMATION
 ========================= */
 
-const style =
+const sparkleStyle =
     document.createElement("style");
 
 
-style.innerHTML = `
+sparkleStyle.innerHTML = `
 
 @keyframes sparkleFloat {
 
@@ -378,5 +395,5 @@ style.innerHTML = `
 
 
 document.head.appendChild(
-    style
+    sparkleStyle
 );
