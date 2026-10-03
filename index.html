@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something For Kavya ✨</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="stars"></div>
+
+    <!-- INTRO -->
+    <section class="screen active" id="intro">
+
+        <div class="content">
+
+            <div class="moon">🌙</div>
+
+            <p class="tiny">A little secret...</p>
+
+            <h1>
+                Kavya,<br>
+                can I steal<br>
+                <span>30 seconds?</span>
+            </h1>
+
+            <p class="sub">
+                I promise there's a reason. 👀
+            </p>
+
+            <button onclick="startExperience()">
+                I'm curious ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUESTION 1 -->
+    <section class="screen" id="question1">
+
+        <div class="content">
+
+            <div class="number">01</div>
+
+            <h2>
+                Imagine you suddenly<br>
+                receive a mystery message...
+            </h2>
+
+            <p>
+                What would you do?
+            </p>
+
+            <div class="choices">
+
+                <button onclick="chooseOne()">
+                    👀 Open it immediately
+                </button>
+
+                <button onclick="chooseOne()">
+                    😂 Ignore it for 5 minutes
+                </button>
+
+                <button onclick="chooseOne()">
+                    🤔 Try to guess who sent it
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUESTION 2 -->
+    <section class="screen" id="question2">
+
+        <div class="content">
+
+            <div class="number">02</div>
+
+            <h2>
+                Okay... one more.
+            </h2>
+
+            <p>
+                Which sounds more interesting?
+            </p>
+
+            <div class="choices">
+
+                <button onclick="chooseTwo()">
+                    🌃 A late-night conversation
+                </button>
+
+                <button onclick="chooseTwo()">
+                    🌸 A random unexpected adventure
+                </button>
+
+                <button onclick="chooseTwo()">
+                    ☕ Just sitting and talking for hours
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVEAL -->
+    <section class="screen" id="reveal">
+
+        <div class="content">
+
+            <div class="envelope" onclick="openLetter()">
+
+                <div class="envelope-top"></div>
+
+                <div class="letter-icon">
+                    💌
+                </div>
+
+            </div>
+
+            <p class="tiny">
+                You've unlocked something...
+            </p>
+
+            <h2>
+                Tap the letter.
+            </h2>
+
+        </div>
+
+    </section>
+
+
+    <!-- LETTER -->
+    <section class="screen" id="letter">
+
+        <div class="letter">
+
+            <div class="paper">
+
+                <div class="flower">🌷</div>
+
+                <h2>
+                    Dear Kavya,
+                </h2>
+
+                <p>
+                    Okay... here's the actual reason
+                    I made this little website.
+                </p>
+
+                <p>
+                    I wanted to create something that
+                    wasn't just another ordinary message.
+                </p>
+
+                <p>
+                    Something you could open,
+                    explore, and hopefully smile at.
+                </p>
+
+                <div class="line"></div>
+
+                <h3>
+                    And the secret is...
+                </h3>
+
+                <button onclick="finalReveal()">
+                    Reveal it ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="screen" id="final">
+
+        <div class="content final-content">
+
+            <div class="big-flower">
+                🌷
+            </div>
+
+            <h1>
+                Kavya
+            </h1>
+
+            <p class="final-message">
+                You're someone I genuinely enjoy
+                having around.
+            </p>
+
+            <p class="final-message">
+                And I just wanted to make you
+                smile today. 😊
+            </p>
+
+            <div class="sparkles">
+                ✨ 💗 ✨
+            </div>
+
+            <p class="from">
+                — Venkey
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
