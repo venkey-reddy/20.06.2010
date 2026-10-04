@@ -3,9 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>A Little Something For Kavya ❤️</title>
 
@@ -17,12 +15,10 @@
     <!-- Floating hearts -->
     <div class="heart-container"></div>
 
-
-    <!-- Background music -->
+    <!-- Main BGM -->
     <audio id="bgMusic" preload="auto">
-        <source src="bgm.mp3" type="audio/mpeg">
+        <source src="./bgm.mp3" type="audio/mpeg">
     </audio>
-
 
     <!-- =========================
          INTRO
@@ -32,9 +28,7 @@
 
         <div class="content">
 
-            <div class="love-icon">
-                ♡
-            </div>
+            <div class="love-icon">♡</div>
 
             <p class="tiny">
                 A little secret...
@@ -72,26 +66,22 @@
             </div>
 
             <h2>
-                Imagine you suddenly<br>
-                receive a mystery message...
+                Heyy... how can I<br>
+                impress you?
             </h2>
 
-            <p>
-                What would you do?
+            <p class="question-sub">
+                Give me a hint... wait, I'll try... 😅
             </p>
 
             <div class="choices">
 
-                <button onclick="chooseOne()">
+                <button onclick="openImmediately()">
                     👀 Open it immediately
                 </button>
 
-                <button onclick="chooseOne()">
-                    😂 Ignore it for 5 minutes
-                </button>
-
-                <button onclick="chooseOne()">
-                    🤔 Try to guess who sent it
+                <button onclick="startTwoMinuteTimer()">
+                    ⏳ Wait 2 minutes
                 </button>
 
             </div>
@@ -102,72 +92,39 @@
 
 
     <!-- =========================
-         QUESTION 2
+         TWO MINUTE TIMER
     ========================== -->
 
-    <section class="screen" id="question2">
+    <section class="screen" id="timerPage">
 
-        <div class="content">
+        <div class="content timer-content">
 
             <div class="number">
-                02
+                WAIT... ⏳
             </div>
 
             <h2>
-                Okay... one more.
+                Okay... I'll wait.
             </h2>
 
-            <p>
-                Which sounds more interesting?
-            </p>
+            <div class="timer-circle">
 
-            <div class="choices">
-
-                <button onclick="chooseTwo()">
-                    🌃 A late-night conversation
-                </button>
-
-                <button onclick="chooseTwo()">
-                    🌸 A random unexpected adventure
-                </button>
-
-                <button onclick="chooseTwo()">
-                    ☕ Just sitting and talking for hours
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         ENVELOPE
-    ========================== -->
-
-    <section class="screen" id="reveal">
-
-        <div class="content">
-
-            <div class="envelope"
-                 onclick="openLetter()">
-
-                <div class="envelope-top"></div>
-
-                <div class="letter-icon">
-                    💌
+                <div id="timer">
+                    02:00
                 </div>
 
             </div>
 
-            <p class="tiny">
-                You've unlocked something...
+            <p class="timer-text">
+                Let's see if you can actually wait... 👀
             </p>
 
-            <h2>
-                Tap the letter.
-            </h2>
+            <button
+                class="cant-wait"
+                onclick="cantWait()">
+
+                I can't wait 😭
+            </button>
 
         </div>
 
@@ -175,7 +132,192 @@
 
 
     <!-- =========================
-         LETTER
+         QUESTION 1 AGAIN
+    ========================== -->
+
+    <section class="screen" id="question1Again">
+
+        <div class="content">
+
+            <div class="number">
+                01 — AGAIN 😌
+            </div>
+
+            <h2>
+                Okay okay...<br>
+                one more chance.
+            </h2>
+
+            <p class="question-sub">
+                What do you want to do now?
+            </p>
+
+            <div class="choices">
+
+                <button onclick="openMemoryPage()">
+                    👀 Open it immediately now
+                </button>
+
+                <button onclick="startTwoMinuteTimerAgain()">
+                    ⏳ Give again — wait 2 minutes
+                </button>
+
+                <button onclick="notInterested()">
+                    😶 Not interested
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PLEASE WAIT PAGE
+    ========================== -->
+
+    <section class="screen" id="pleasePage">
+
+        <div class="content">
+
+            <div class="please-heart">
+                🥺
+            </div>
+
+            <h2>
+                Heyy... please give me
+                <br>
+                20 seconds
+            </h2>
+
+            <p class="please-text">
+                I promise I'm not asking for much... 🥺👉👈
+            </p>
+
+            <button onclick="goBackQuestion()">
+                ← Go back
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NOT INTERESTED PAGE
+    ========================== -->
+
+    <section class="screen" id="notInterestedPage">
+
+        <div class="content">
+
+            <div class="not-icon">
+                💗
+            </div>
+
+            <p class="tiny">
+                Wait...
+            </p>
+
+            <h2>
+                Before you go...
+            </h2>
+
+            <p class="not-message">
+                Just give me a few seconds.
+            </p>
+
+            <button onclick="openMemoryPage()">
+                Okay... show me 👀
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORY PAGE
+    ========================== -->
+
+    <section class="screen memory-screen" id="memoryPage">
+
+        <div class="memory-overlay"></div>
+
+        <div class="memory-content">
+
+            <div class="memory-title">
+                <p class="tiny">
+                    A few little memories...
+                </p>
+
+                <h1>
+                    Kavya ❤️
+                </h1>
+            </div>
+
+
+            <!-- VIDEO -->
+
+            <div class="memory-video-box">
+
+                <video
+                    id="kavyaVideo"
+                    controls
+                    playsinline
+                    preload="metadata">
+
+                    <source
+                        src="./kavya.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+                </video>
+
+            </div>
+
+
+            <!-- MEMORY PHOTOS -->
+
+            <div class="memory-gallery">
+
+                <div class="memory-photo photo1">
+                    <img src="./memory1.jpg" alt="Memory">
+                </div>
+
+                <div class="memory-photo photo2">
+                    <img src="./memory2.jpg" alt="Memory">
+                </div>
+
+                <div class="memory-photo photo3">
+                    <img src="./memory3.jpg" alt="Memory">
+                </div>
+
+                <div class="memory-photo photo4">
+                    <img src="./memory4.jpg" alt="Memory">
+                </div>
+
+                <div class="memory-photo photo5">
+                    <img src="./memory5.jpg" alt="Memory">
+                </div>
+
+            </div>
+
+
+            <p class="memory-text">
+                Some moments are small...
+                <br>
+                but somehow they stay with us. 💗
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         OLD LETTER
     ========================== -->
 
     <section class="screen" id="letter">
@@ -193,18 +335,18 @@
                 </h2>
 
                 <p>
-                    Okay... here's the actual reason
-                    I made this little website.
+                    Okay... here's the actual reason I made
+                    this little website.
                 </p>
 
                 <p>
-                    I wanted to create something that
-                    wasn't just another ordinary message.
+                    I wanted to create something that wasn't
+                    just another ordinary message.
                 </p>
 
                 <p>
-                    Something you could open,
-                    explore, and hopefully smile at.
+                    Something you could open, explore,
+                    and hopefully smile at.
                 </p>
 
                 <div class="line"></div>
@@ -241,13 +383,11 @@
             </h1>
 
             <p class="final-message">
-                You're someone I genuinely enjoy
-                having around.
+                You're someone I genuinely enjoy having around.
             </p>
 
             <p class="final-message">
-                And I just wanted to make you
-                smile today. 😊
+                And I just wanted to make you smile today. 😊
             </p>
 
             <div class="sparkles">
