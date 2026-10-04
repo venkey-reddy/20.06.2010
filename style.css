@@ -1,13 +1,8 @@
-/* =========================
-   RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 html,
 body {
@@ -15,20 +10,12 @@ body {
     min-height: 100%;
 }
 
-
 body {
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
-
     overflow: hidden;
 
     background:
-
         radial-gradient(
             circle at 50% 15%,
             rgba(255, 143, 190, 0.28),
@@ -55,9 +42,7 @@ body {
 ========================= */
 
 .heart-container {
-
     position: fixed;
-
     inset: 0;
 
     overflow: hidden;
@@ -67,9 +52,7 @@ body {
     z-index: 1;
 }
 
-
 .floating-heart {
-
     position: absolute;
 
     bottom: -40px;
@@ -82,21 +65,16 @@ body {
 
     filter:
         drop-shadow(
-            0 0 6px
-            rgba(255, 100, 170, 0.55)
+            0 0 6px rgba(255, 100, 170, 0.55)
         );
 
     animation:
-        heartRise
-        linear
-        forwards;
+        heartRise linear forwards;
 }
-
 
 @keyframes heartRise {
 
     0% {
-
         transform:
             translate3d(0, 0, 0)
             rotate(0deg)
@@ -110,7 +88,6 @@ body {
     }
 
     35% {
-
         transform:
             translate3d(
                 var(--drift1),
@@ -122,7 +99,6 @@ body {
     }
 
     65% {
-
         transform:
             translate3d(
                 var(--drift2),
@@ -134,7 +110,6 @@ body {
     }
 
     100% {
-
         transform:
             translate3d(
                 var(--drift3),
@@ -154,7 +129,6 @@ body {
 ========================= */
 
 .screen {
-
     position: fixed;
 
     inset: 0;
@@ -162,7 +136,6 @@ body {
     display: none;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 25px;
@@ -170,34 +143,23 @@ body {
     z-index: 2;
 }
 
-
 .screen.active {
-
     display: flex;
 
     animation:
-        screenIn
-        0.8s
-        ease;
+        screenIn 0.8s ease;
 }
-
 
 @keyframes screenIn {
 
     from {
-
         opacity: 0;
-
-        transform:
-            scale(1.04);
+        transform: scale(1.04);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 }
 
@@ -207,7 +169,6 @@ body {
 ========================= */
 
 .content {
-
     width: 100%;
 
     max-width: 520px;
@@ -217,22 +178,19 @@ body {
 
 
 /* =========================
-   LOVE ICON
+   INTRO ICON
 ========================= */
 
 .love-icon {
 
     width: 85px;
-
     height: 85px;
 
-    margin:
-        0 auto 25px;
+    margin: 0 auto 25px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
@@ -245,42 +203,32 @@ body {
         rgba(255, 130, 180, 0.08);
 
     border:
-        1px solid
-        rgba(255, 160, 200, 0.2);
+        1px solid rgba(255, 160, 200, 0.2);
 
     box-shadow:
-        0 0 35px
-        rgba(255, 90, 160, 0.18);
+        0 0 35px rgba(255, 90, 160, 0.18);
 
     animation:
-        softPulse
-        2.5s
-        ease-in-out
-        infinite;
+        softPulse 2.5s ease-in-out infinite;
 }
-
 
 @keyframes softPulse {
 
     0%,
     100% {
 
-        transform:
-            scale(1);
+        transform: scale(1);
 
         box-shadow:
-            0 0 30px
-            rgba(255, 90, 160, 0.15);
+            0 0 30px rgba(255, 90, 160, 0.15);
     }
 
     50% {
 
-        transform:
-            scale(1.06);
+        transform: scale(1.06);
 
         box-shadow:
-            0 0 45px
-            rgba(255, 90, 160, 0.3);
+            0 0 45px rgba(255, 90, 160, 0.3);
     }
 }
 
@@ -291,40 +239,29 @@ body {
 
 .tiny {
 
-    text-transform:
-        uppercase;
+    text-transform: uppercase;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 4px;
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    opacity:
-        0.6;
+    opacity: 0.6;
 
-    margin-bottom:
-        15px;
+    margin-bottom: 15px;
 }
-
 
 h1 {
 
-    font-size:
-        52px;
+    font-size: 52px;
 
-    line-height:
-        1.05;
+    line-height: 1.05;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 }
-
 
 h1 span {
 
     background:
-
         linear-gradient(
             90deg,
             #ff8acb,
@@ -332,37 +269,34 @@ h1 span {
             #ff8acb
         );
 
-    -webkit-background-clip:
-        text;
+    -webkit-background-clip: text;
 
-    color:
-        transparent;
+    color: transparent;
 }
-
 
 h2 {
 
-    font-size:
-        31px;
+    font-size: 31px;
 
-    line-height:
-        1.25;
+    line-height: 1.25;
 
-    margin-bottom:
-        18px;
+    margin-bottom: 18px;
 }
-
 
 .sub {
 
-    font-size:
-        17px;
+    font-size: 17px;
 
-    opacity:
-        0.7;
+    opacity: 0.7;
 
-    margin-bottom:
-        35px;
+    margin-bottom: 35px;
+}
+
+.content > p {
+
+    opacity: 0.65;
+
+    margin-bottom: 25px;
 }
 
 
@@ -373,37 +307,27 @@ h2 {
 button {
 
     border:
-        1px solid
-        rgba(255, 255, 255, 0.3);
+        1px solid rgba(255, 255, 255, 0.3);
 
     background:
         rgba(255, 255, 255, 0.08);
 
-    color:
-        white;
+    color: white;
 
-    padding:
-        15px 24px;
+    padding: 15px 24px;
 
-    border-radius:
-        50px;
+    border-radius: 50px;
 
-    font-size:
-        15px;
+    font-size: 15px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
-    transition:
-        0.3s;
+    transition: 0.3s;
 
-    backdrop-filter:
-        blur(10px);
+    backdrop-filter: blur(10px);
 
-    margin:
-        6px;
+    margin: 6px;
 }
-
 
 button:hover {
 
@@ -418,7 +342,6 @@ button:hover {
         rgba(255, 100, 190, 0.2);
 }
 
-
 button:active {
 
     transform:
@@ -432,50 +355,29 @@ button:active {
 
 .number {
 
-    font-size:
-        13px;
+    font-size: 13px;
 
-    letter-spacing:
-        5px;
+    letter-spacing: 5px;
 
-    opacity:
-        0.5;
+    opacity: 0.5;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 }
-
-
-.content > p {
-
-    opacity:
-        0.65;
-
-    margin-bottom:
-        25px;
-}
-
 
 .choices {
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    align-items:
-        center;
+    align-items: center;
 }
-
 
 .choices button {
 
-    width:
-        100%;
+    width: 100%;
 
-    max-width:
-        380px;
+    max-width: 380px;
 }
 
 
@@ -485,14 +387,11 @@ button:active {
 
 .envelope {
 
-    position:
-        relative;
+    position: relative;
 
-    width:
-        210px;
+    width: 210px;
 
-    height:
-        140px;
+    height: 140px;
 
     margin:
         0 auto 30px;
@@ -500,20 +399,16 @@ button:active {
     background:
         #e98ab7;
 
-    border-radius:
-        8px;
+    border-radius: 8px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
     box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.4);
 
-    transition:
-        0.3s;
+    transition: 0.3s;
 }
-
 
 .envelope:hover {
 
@@ -522,57 +417,37 @@ button:active {
         rotate(-2deg);
 }
 
-
 .envelope-top {
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        0;
+    top: 0;
+    left: 0;
 
-    left:
-        0;
-
-    width:
-        0;
-
-    height:
-        0;
+    width: 0;
+    height: 0;
 
     border-left:
-        105px
-        solid
-        transparent;
+        105px solid transparent;
 
     border-right:
-        105px
-        solid
-        transparent;
+        105px solid transparent;
 
     border-top:
-        75px
-        solid
-        #d66da0;
+        75px solid #d66da0;
 }
-
 
 .letter-icon {
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        50%;
-
-    left:
-        50%;
+    top: 50%;
+    left: 50%;
 
     transform:
         translate(-50%, -20%);
 
-    font-size:
-        45px;
+    font-size: 45px;
 }
 
 
@@ -582,19 +457,14 @@ button:active {
 
 .letter {
 
-    width:
-        100%;
+    width: 100%;
 
-    max-width:
-        480px;
+    max-width: 480px;
 
-    max-height:
-        90vh;
+    max-height: 90vh;
 
-    overflow-y:
-        auto;
+    overflow-y: auto;
 }
-
 
 .paper {
 
@@ -604,32 +474,25 @@ button:active {
     color:
         #34212c;
 
-    border-radius:
-        15px;
+    border-radius: 15px;
 
-    padding:
-        40px 30px;
+    padding: 40px 30px;
 
-    text-align:
-        center;
+    text-align: center;
 
     box-shadow:
         0 25px 80px
         rgba(0, 0, 0, 0.5);
 
     animation:
-        paperOpen
-        0.8s
-        ease;
+        paperOpen 0.8s ease;
 }
-
 
 @keyframes paperOpen {
 
     from {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(50px)
@@ -638,8 +501,7 @@ button:active {
 
     to {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             translateY(0)
@@ -647,16 +509,12 @@ button:active {
     }
 }
 
-
 .flower {
 
-    font-size:
-        50px;
+    font-size: 50px;
 
-    margin-bottom:
-        15px;
+    margin-bottom: 15px;
 }
-
 
 .paper h2 {
 
@@ -664,27 +522,20 @@ button:active {
         #c24c82;
 }
 
-
 .paper p {
 
-    font-size:
-        16px;
+    font-size: 16px;
 
-    line-height:
-        1.7;
+    line-height: 1.7;
 
-    margin:
-        18px 0;
+    margin: 18px 0;
 }
-
 
 .line {
 
-    width:
-        60px;
+    width: 60px;
 
-    height:
-        2px;
+    height: 2px;
 
     background:
         #e4a0be;
@@ -693,11 +544,9 @@ button:active {
         25px auto;
 }
 
-
 .paper h3 {
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
     color:
         #9b3b68;
@@ -705,24 +554,20 @@ button:active {
 
 
 /* =========================
-   FINAL
+   FINAL SCREEN
 ========================= */
 
 .final-content {
 
     animation:
-        finalIn
-        1.2s
-        ease;
+        finalIn 1.2s ease;
 }
-
 
 @keyframes finalIn {
 
     from {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             scale(0.7)
@@ -731,8 +576,7 @@ button:active {
 
     to {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             scale(1)
@@ -740,47 +584,35 @@ button:active {
     }
 }
 
-
 .big-flower {
 
-    font-size:
-        90px;
+    font-size: 90px;
 
     animation:
-        floating
-        3s
-        ease-in-out
-        infinite;
+        floating 3s ease-in-out infinite;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 }
-
 
 @keyframes floating {
 
     0%,
     100% {
-
         transform:
             translateY(0);
     }
 
     50% {
-
         transform:
             translateY(-15px);
     }
 }
 
-
 .final-content h1 {
 
-    font-size:
-        60px;
+    font-size: 60px;
 
     background:
-
         linear-gradient(
             90deg,
             #ff8acb,
@@ -788,73 +620,53 @@ button:active {
             #ff8acb
         );
 
-    -webkit-background-clip:
-        text;
+    -webkit-background-clip: text;
 
-    color:
-        transparent;
+    color: transparent;
 }
-
 
 .final-message {
 
-    font-size:
-        18px;
+    font-size: 18px;
 
-    line-height:
-        1.7;
+    line-height: 1.7;
 
-    opacity:
-        0.8;
+    opacity: 0.8;
 
-    margin:
-        15px auto;
+    margin: 15px auto;
 
-    max-width:
-        400px;
+    max-width: 400px;
 }
-
 
 .sparkles {
 
-    font-size:
-        25px;
+    font-size: 25px;
 
-    margin-top:
-        30px;
+    margin-top: 30px;
 
     animation:
-        sparkle
-        2s
-        infinite;
+        sparkle 2s infinite;
 }
-
 
 @keyframes sparkle {
 
     0%,
     100% {
-        opacity:
-            0.4;
+        opacity: 0.4;
     }
 
     50% {
-        opacity:
-            1;
+        opacity: 1;
     }
 }
 
-
 .from {
 
-    margin-top:
-        30px;
+    margin-top: 30px;
 
-    font-style:
-        italic;
+    font-style: italic;
 
-    opacity:
-        0.6;
+    opacity: 0.6;
 }
 
 
@@ -865,31 +677,20 @@ button:active {
 @media (max-width: 600px) {
 
     h1 {
-
-        font-size:
-            40px;
+        font-size: 40px;
     }
-
 
     h2 {
-
-        font-size:
-            27px;
+        font-size: 27px;
     }
-
 
     .love-icon {
 
-        width:
-            75px;
+        width: 75px;
+        height: 75px;
 
-        height:
-            75px;
-
-        font-size:
-            55px;
+        font-size: 55px;
     }
-
 
     .paper {
 
@@ -897,21 +698,16 @@ button:active {
             32px 22px;
     }
 
-
     .final-content h1 {
 
-        font-size:
-            50px;
+        font-size: 50px;
     }
-
 
     button {
 
-        font-size:
-            14px;
+        font-size: 14px;
 
         padding:
             14px 21px;
     }
-
 }
