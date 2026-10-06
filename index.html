@@ -15,20 +15,30 @@
     <!-- Floating hearts -->
     <div class="heart-container"></div>
 
+
     <!-- Main BGM -->
     <audio id="bgMusic" preload="auto">
         <source src="./bgm.mp3" type="audio/mpeg">
     </audio>
 
+
+    <!-- Memory BGM -->
+    <audio id="memoryMusic" preload="auto">
+        <source src="./memory-bgm.mp3" type="audio/mpeg">
+    </audio>
+
+
     <!-- =========================
-         INTRO
+         FIRST PAGE
     ========================== -->
 
     <section class="screen active" id="intro">
 
         <div class="content">
 
-            <div class="love-icon">♡</div>
+            <div class="love-icon">
+                ♡
+            </div>
 
             <p class="tiny">
                 A little secret...
@@ -76,12 +86,16 @@
 
             <div class="choices">
 
-                <button onclick="openImmediately()">
+                <button onclick="openImmediately('question1')">
                     👀 Open it immediately
                 </button>
 
-                <button onclick="startTwoMinuteTimer()">
+                <button onclick="startTwoMinuteTimer('question1')">
                     ⏳ Wait 2 minutes
+                </button>
+
+                <button onclick="notInterested('question1')">
+                    😶 Not interested
                 </button>
 
             </div>
@@ -124,6 +138,7 @@
                 onclick="cantWait()">
 
                 I can't wait 😭
+
             </button>
 
         </div>
@@ -132,7 +147,7 @@
 
 
     <!-- =========================
-         QUESTION 1 AGAIN
+         QUESTION AGAIN
     ========================== -->
 
     <section class="screen" id="question1Again">
@@ -154,15 +169,15 @@
 
             <div class="choices">
 
-                <button onclick="openMemoryPage()">
+                <button onclick="openImmediately('question1Again')">
                     👀 Open it immediately now
                 </button>
 
-                <button onclick="startTwoMinuteTimerAgain()">
+                <button onclick="startTwoMinuteTimer('question1Again')">
                     ⏳ Give again — wait 2 minutes
                 </button>
 
-                <button onclick="notInterested()">
+                <button onclick="notInterested('question1Again')">
                     😶 Not interested
                 </button>
 
@@ -174,62 +189,41 @@
 
 
     <!-- =========================
-         PLEASE WAIT PAGE
-    ========================== -->
-
-    <section class="screen" id="pleasePage">
-
-        <div class="content">
-
-            <div class="please-heart">
-                🥺
-            </div>
-
-            <h2>
-                Heyy... please give me
-                <br>
-                20 seconds
-            </h2>
-
-            <p class="please-text">
-                I promise I'm not asking for much... 🥺👉👈
-            </p>
-
-            <button onclick="goBackQuestion()">
-                ← Go back
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         NOT INTERESTED PAGE
+         NOT INTERESTED REQUEST
     ========================== -->
 
     <section class="screen" id="notInterestedPage">
 
-        <div class="content">
+        <div class="content request-content">
 
-            <div class="not-icon">
+            <div class="request-heart">
                 💗
             </div>
 
             <p class="tiny">
-                Wait...
+                WAIT...
             </p>
 
             <h2>
                 Before you go...
             </h2>
 
-            <p class="not-message">
+            <p class="request-text">
                 Just give me a few seconds.
             </p>
 
-            <button onclick="openMemoryPage()">
+            <button onclick="showMeMemory()">
                 Okay... show me 👀
+            </button>
+
+            <br>
+
+            <button
+                class="go-back-button"
+                onclick="goBackQuestion()">
+
+                ← Go back
+
             </button>
 
         </div>
@@ -241,20 +235,24 @@
          MEMORY PAGE
     ========================== -->
 
-    <section class="screen memory-screen" id="memoryPage">
+    <section
+        class="screen memory-screen"
+        id="memoryPage">
 
         <div class="memory-overlay"></div>
 
         <div class="memory-content">
 
             <div class="memory-title">
+
                 <p class="tiny">
-                    A few little memories...
+                    A FEW LITTLE MEMORIES...
                 </p>
 
                 <h1>
                     Kavya ❤️
                 </h1>
+
             </div>
 
 
@@ -273,33 +271,44 @@
                         type="video/mp4">
 
                     Your browser does not support video.
+
                 </video>
 
             </div>
 
 
-            <!-- MEMORY PHOTOS -->
+            <!-- FIVE PHOTOS -->
 
             <div class="memory-gallery">
 
                 <div class="memory-photo photo1">
-                    <img src="./memory1.jpg" alt="Memory">
+                    <img
+                        src="./image1.png"
+                        alt="Memory 1">
                 </div>
 
                 <div class="memory-photo photo2">
-                    <img src="./memory2.jpg" alt="Memory">
+                    <img
+                        src="./image2.png"
+                        alt="Memory 2">
                 </div>
 
                 <div class="memory-photo photo3">
-                    <img src="./memory3.jpg" alt="Memory">
+                    <img
+                        src="./image3.png"
+                        alt="Memory 3">
                 </div>
 
                 <div class="memory-photo photo4">
-                    <img src="./memory4.jpg" alt="Memory">
+                    <img
+                        src="./image4.png"
+                        alt="Memory 4">
                 </div>
 
                 <div class="memory-photo photo5">
-                    <img src="./memory5.jpg" alt="Memory">
+                    <img
+                        src="./image5.png"
+                        alt="Memory 5">
                 </div>
 
             </div>
@@ -317,7 +326,7 @@
 
 
     <!-- =========================
-         OLD LETTER
+         LETTER
     ========================== -->
 
     <section class="screen" id="letter">
