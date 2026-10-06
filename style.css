@@ -21,13 +21,11 @@ body {
             rgba(255, 143, 190, 0.28),
             transparent 35%
         ),
-
         radial-gradient(
             circle at 20% 80%,
             rgba(255, 100, 170, 0.12),
             transparent 30%
         ),
-
         linear-gradient(
             145deg,
             #170d18,
@@ -44,23 +42,17 @@ body {
 .heart-container {
     position: fixed;
     inset: 0;
-
     overflow: hidden;
-
     pointer-events: none;
-
     z-index: 1;
 }
 
 .floating-heart {
     position: absolute;
-
     bottom: -40px;
 
     color: #ff8fbd;
-
     font-size: 13px;
-
     opacity: 0;
 
     filter:
@@ -130,7 +122,6 @@ body {
 
 .screen {
     position: fixed;
-
     inset: 0;
 
     display: none;
@@ -170,9 +161,7 @@ body {
 
 .content {
     width: 100%;
-
     max-width: 520px;
-
     text-align: center;
 }
 
@@ -351,7 +340,7 @@ button:active {
 
 
 /* =========================
-   QUESTIONS
+   CHOICES
 ========================= */
 
 .number {
@@ -378,7 +367,7 @@ button:active {
 
     width: 100%;
 
-    max-width: 380px;
+    max-width: 475px;
 }
 
 
@@ -458,20 +447,41 @@ button:active {
 
 
 /* =========================
-   PLEASE PAGE
+   NOT INTERESTED REQUEST
 ========================= */
 
-.please-heart {
-
-    font-size: 80px;
-
-    margin-bottom: 20px;
-
-    animation:
-        pleasePulse 1.5s ease-in-out infinite;
+.request-content {
+    text-align: center;
 }
 
-@keyframes pleasePulse {
+.request-heart {
+
+    width: 100%;
+    max-width: 700px;
+
+    height: 130px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 75px;
+
+    background:
+        rgba(255, 90, 160, 0.08);
+
+    box-shadow:
+        0 0 45px
+        rgba(255, 80, 160, 0.18);
+
+    animation:
+        requestHeartPulse 2s ease-in-out infinite;
+}
+
+@keyframes requestHeartPulse {
 
     0%,
     100% {
@@ -479,41 +489,27 @@ button:active {
     }
 
     50% {
-        transform: scale(1.12);
+        transform: scale(1.03);
     }
 }
 
-.please-text {
+.request-text {
 
     font-size: 18px;
 
-    line-height: 1.7;
-
-    opacity: 0.75;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================
-   NOT INTERESTED
-========================= */
-
-.not-icon {
-
-    font-size: 75px;
+    opacity: 0.72;
 
     margin-bottom: 25px;
-
-    animation:
-        softPulse 2s infinite;
 }
 
-.not-message {
+.go-back-button {
 
-    font-size: 18px;
+    opacity: 0.65;
 
-    margin-bottom: 25px;
+    font-size: 14px;
+
+    padding:
+        11px 20px;
 }
 
 
@@ -522,7 +518,9 @@ button:active {
 ========================= */
 
 .memory-screen {
+
     overflow-y: auto;
+
     align-items: flex-start;
 }
 
@@ -636,6 +634,7 @@ button:active {
 
     from {
         opacity: 0;
+
         transform:
             scale(0.9)
             translateY(30px);
@@ -643,6 +642,7 @@ button:active {
 
     to {
         opacity: 1;
+
         transform:
             scale(1)
             translateY(0);
@@ -706,12 +706,13 @@ button:active {
     height: 100%;
 
     object-fit: cover;
+
+    display: block;
 }
 
 .photo1 {
 
     left: 8%;
-
     top: 35px;
 
     transform: rotate(-9deg);
@@ -722,7 +723,6 @@ button:active {
 .photo2 {
 
     left: 28%;
-
     top: 90px;
 
     transform: rotate(6deg);
@@ -733,7 +733,6 @@ button:active {
 .photo3 {
 
     right: 28%;
-
     top: 50px;
 
     transform: rotate(-5deg);
@@ -744,7 +743,6 @@ button:active {
 .photo4 {
 
     right: 8%;
-
     top: 110px;
 
     transform: rotate(9deg);
@@ -755,7 +753,6 @@ button:active {
 .photo5 {
 
     left: 43%;
-
     top: 5px;
 
     transform: rotate(2deg);
@@ -767,15 +764,11 @@ button:active {
 
     0%,
     100% {
-
         margin-top: 0;
-
     }
 
     50% {
-
         margin-top: -18px;
-
     }
 }
 
@@ -788,75 +781,6 @@ button:active {
     opacity: 0.75;
 
     margin-top: 30px;
-}
-
-
-/* =========================
-   OLD ENVELOPE
-========================= */
-
-.envelope {
-
-    position: relative;
-
-    width: 210px;
-    height: 140px;
-
-    margin:
-        0 auto 30px;
-
-    background:
-        #e98ab7;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.4);
-
-    transition: 0.3s;
-}
-
-.envelope:hover {
-
-    transform:
-        translateY(-8px)
-        rotate(-2deg);
-}
-
-.envelope-top {
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 0;
-    height: 0;
-
-    border-left:
-        105px solid transparent;
-
-    border-right:
-        105px solid transparent;
-
-    border-top:
-        75px solid #d66da0;
-}
-
-.letter-icon {
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform:
-        translate(-50%, -20%);
-
-    font-size: 45px;
 }
 
 
@@ -900,7 +824,6 @@ button:active {
 @keyframes paperOpen {
 
     from {
-
         opacity: 0;
 
         transform:
@@ -909,7 +832,6 @@ button:active {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -926,9 +848,7 @@ button:active {
 }
 
 .paper h2 {
-
-    color:
-        #c24c82;
+    color: #c24c82;
 }
 
 .paper p {
@@ -975,7 +895,6 @@ button:active {
 @keyframes finalIn {
 
     from {
-
         opacity: 0;
 
         transform:
@@ -984,7 +903,6 @@ button:active {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -1119,16 +1037,26 @@ button:active {
         font-size: 35px;
     }
 
+    .request-heart {
+
+        height: 110px;
+
+        font-size: 65px;
+    }
+
     .memory-content {
+
         padding:
             50px 15px 50px;
     }
 
     .memory-title h1 {
+
         font-size: 48px;
     }
 
     .memory-gallery {
+
         height: 500px;
     }
 
