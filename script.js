@@ -1,20 +1,25 @@
 /* =========================
    SCREEN CHANGE
+   IMPORTANT FIX:
+   ONLY ONE SCREEN ACTIVE
 ========================= */
 
 function changeScreen(current, next) {
 
-    document
-        .getElementById(current)
-        .classList
-        .remove("active");
+    // Immediately hide EVERY screen.
+    document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+    });
 
+    // Show only the requested screen.
     setTimeout(() => {
 
-        document
-            .getElementById(next)
-            .classList
-            .add("active");
+        const nextScreen =
+            document.getElementById(next);
+
+        if (nextScreen) {
+            nextScreen.classList.add("active");
+        }
 
     }, 250);
 }
@@ -37,7 +42,7 @@ function startExperience() {
 
     music.volume = 0.65;
 
-    music.play().catch((error) => {
+    music.play().catch(error => {
 
         console.log(
             "BGM could not start:",
@@ -90,35 +95,34 @@ function startTwoMinuteTimer(currentPage) {
 
     updateTimer(seconds);
 
-    timerInterval =
-        setInterval(() => {
+    timerInterval = setInterval(() => {
 
-            seconds--;
+        seconds--;
 
-            updateTimer(seconds);
+        updateTimer(seconds);
 
-            if (seconds <= 0) {
+        if (seconds <= 0) {
 
-                clearInterval(timerInterval);
+            clearInterval(timerInterval);
 
-                createSparkles();
+            createSparkles();
 
-                setTimeout(() => {
+            setTimeout(() => {
 
-                    changeScreen(
-                        "timerPage",
-                        "question1Again"
-                    );
+                changeScreen(
+                    "timerPage",
+                    "question1Again"
+                );
 
-                }, 500);
-            }
+            }, 500);
+        }
 
-        }, 1000);
+    }, 1000);
 }
 
 
 /* =========================
-   TIMER DISPLAY
+   TIMER
 ========================= */
 
 function updateTimer(seconds) {
@@ -161,6 +165,8 @@ function cantWait() {
 
 function notInterested(currentPage) {
 
+    clearInterval(timerInterval);
+
     createSparkles();
 
     playLastSevenSeconds();
@@ -177,7 +183,7 @@ function notInterested(currentPage) {
 
 
 /* =========================
-   LAST 7 SECONDS OF BGM
+   LAST 7 SECONDS OF MAIN BGM
 ========================= */
 
 function playLastSevenSeconds() {
@@ -260,7 +266,7 @@ function goBackQuestion() {
    MEMORY PAGE
 ========================= */
 
-function openMemoryPage(previousScreen) {
+function openMemoryPage(previousPage) {
 
     clearInterval(timerInterval);
 
@@ -270,21 +276,15 @@ function openMemoryPage(previousScreen) {
     const memoryMusic =
         document.getElementById("memoryMusic");
 
-    /*
-       Stop first BGM.
-    */
-
+    // Stop main BGM
     mainMusic.pause();
 
-    /*
-       Start memory BGM.
-    */
-
+    // Start memory BGM
     memoryMusic.currentTime = 0;
 
     memoryMusic.volume = 0.65;
 
-    memoryMusic.play().catch((error) => {
+    memoryMusic.play().catch(error => {
 
         console.log(
             "Memory BGM could not start:",
@@ -296,7 +296,7 @@ function openMemoryPage(previousScreen) {
     createSparkles();
 
     changeScreen(
-        previousScreen,
+        previousPage,
         "memoryPage"
     );
 
@@ -304,7 +304,7 @@ function openMemoryPage(previousScreen) {
 
         playMemoryVideo();
 
-    }, 500);
+    }, 600);
 }
 
 
@@ -381,25 +381,20 @@ function startHeartAnimation() {
 
         heart.style.setProperty(
             "--drift1",
-            (-40 + Math.random() * 80)
-            + "px"
+            (-40 + Math.random() * 80) + "px"
         );
 
         heart.style.setProperty(
             "--drift2",
-            (-70 + Math.random() * 140)
-            + "px"
+            (-70 + Math.random() * 140) + "px"
         );
 
         heart.style.setProperty(
             "--drift3",
-            (-120 + Math.random() * 240)
-            + "px"
+            (-120 + Math.random() * 240) + "px"
         );
 
-        container.appendChild(
-            heart
-        );
+        container.appendChild(heart);
 
         setTimeout(() => {
 
