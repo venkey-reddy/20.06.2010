@@ -29,30 +29,22 @@ function startExperience() {
     const music =
         document.getElementById("bgMusic");
 
+    const memoryMusic =
+        document.getElementById("memoryMusic");
+
+    memoryMusic.pause();
+    memoryMusic.currentTime = 0;
+
     music.volume = 0.65;
 
-    const playPromise =
-        music.play();
+    music.play().catch((error) => {
 
-    if (playPromise !== undefined) {
+        console.log(
+            "BGM could not start:",
+            error
+        );
 
-        playPromise
-            .then(() => {
-
-                console.log(
-                    "BGM started successfully."
-                );
-
-            })
-            .catch((error) => {
-
-                console.log(
-                    "BGM could not start:",
-                    error
-                );
-
-            });
-    }
+    });
 
     startHeartAnimation();
 
@@ -64,17 +56,16 @@ function startExperience() {
 
 
 /* =========================
-   OPTION 1
    OPEN IMMEDIATELY
 ========================= */
 
-function openImmediately() {
+function openImmediately(currentPage) {
 
     createSparkles();
 
     setTimeout(() => {
 
-        openMemoryPage();
+        openMemoryPage(currentPage);
 
     }, 450);
 }
@@ -86,12 +77,12 @@ function openImmediately() {
 
 let timerInterval = null;
 
-function startTwoMinuteTimer() {
+function startTwoMinuteTimer(currentPage) {
 
     clearInterval(timerInterval);
 
     changeScreen(
-        "question1",
+        currentPage,
         "timerPage"
     );
 
@@ -127,51 +118,7 @@ function startTwoMinuteTimer() {
 
 
 /* =========================
-   TIMER AGAIN
-========================= */
-
-function startTwoMinuteTimerAgain() {
-
-    clearInterval(timerInterval);
-
-    changeScreen(
-        "question1Again",
-        "timerPage"
-    );
-
-    let seconds = 120;
-
-    updateTimer(seconds);
-
-    timerInterval =
-        setInterval(() => {
-
-            seconds--;
-
-            updateTimer(seconds);
-
-            if (seconds <= 0) {
-
-                clearInterval(timerInterval);
-
-                createSparkles();
-
-                setTimeout(() => {
-
-                    changeScreen(
-                        "timerPage",
-                        "question1Again"
-                    );
-
-                }, 500);
-            }
-
-        }, 1000);
-}
-
-
-/* =========================
-   UPDATE TIMER
+   TIMER DISPLAY
 ========================= */
 
 function updateTimer(seconds) {
@@ -209,9 +156,10 @@ function cantWait() {
 
 /* =========================
    NOT INTERESTED
+   WORKS FROM BOTH QUESTIONS
 ========================= */
 
-function notInterested() {
+function notInterested(currentPage) {
 
     createSparkles();
 
@@ -220,7 +168,7 @@ function notInterested() {
     setTimeout(() => {
 
         changeScreen(
-            "question1Again",
+            currentPage,
             "notInterestedPage"
         );
 
@@ -237,19 +185,20 @@ function playLastSevenSeconds() {
     const music =
         document.getElementById("bgMusic");
 
-    /*
-       Jump to the last 7 seconds
-       of the BGM.
-    */
-
-    if (music.duration &&
-        isFinite(music.duration)) {
+    if (
+        music.readyState >= 1 &&
+        isFinite(music.duration)
+    ) {
 
         music.currentTime =
             Math.max(
                 0,
                 music.duration - 7
             );
+
+        music.volume = 0.65;
+
+        music.play().catch(() => {});
 
     } else {
 
@@ -263,17 +212,14 @@ function playLastSevenSeconds() {
                         music.duration - 7
                     );
 
+                music.play().catch(() => {});
+
             },
             {
                 once: true
             }
         );
-
     }
-
-    music.volume = 0.65;
-
-    music.play().catch(() => {});
 
     setTimeout(() => {
 
@@ -284,15 +230,73 @@ function playLastSevenSeconds() {
 
 
 /* =========================
+   REQUEST PAGE
+========================= */
+
+function showMeMemory() {
+
+    createSparkles();
+
+    openMemoryPage(
+        "notInterestedPage"
+    );
+}
+
+
+/* =========================
+   GO BACK
+========================= */
+
+function goBackQuestion() {
+
+    changeScreen(
+        "notInterestedPage",
+        "question1Again"
+    );
+}
+
+
+/* =========================
    MEMORY PAGE
 ========================= */
 
-function openMemoryPage() {
+function openMemoryPage(previousScreen) {
+
+    clearInterval(timerInterval);
+
+    const mainMusic =
+        document.getElementById("bgMusic");
+
+    const memoryMusic =
+        document.getElementById("memoryMusic");
+
+    /*
+       Stop first BGM.
+    */
+
+    mainMusic.pause();
+
+    /*
+       Start memory BGM.
+    */
+
+    memoryMusic.currentTime = 0;
+
+    memoryMusic.volume = 0.65;
+
+    memoryMusic.play().catch((error) => {
+
+        console.log(
+            "Memory BGM could not start:",
+            error
+        );
+
+    });
 
     createSparkles();
 
     changeScreen(
-        "question1Again",
+        previousScreen,
         "memoryPage"
     );
 
@@ -300,7 +304,7 @@ function openMemoryPage() {
 
         playMemoryVideo();
 
-    }, 700);
+    }, 500);
 }
 
 
@@ -324,29 +328,15 @@ function playMemoryVideo() {
     video.play().catch(() => {
 
         console.log(
-            "Video needs a user tap to play."
+            "Video autoplay was blocked."
         );
 
     });
-
 }
 
 
 /* =========================
-   GO BACK
-========================= */
-
-function goBackQuestion() {
-
-    changeScreen(
-        "pleasePage",
-        "question1Again"
-    );
-}
-
-
-/* =========================
-   HEART ANIMATION
+   FLOATING HEARTS
 ========================= */
 
 let heartsStarted = false;
@@ -472,7 +462,7 @@ function createSparkles() {
 
 
 /* =========================
-   SPARKLE CSS
+   SPARKLE ANIMATION
 ========================= */
 
 const sparkleStyle =
@@ -483,7 +473,6 @@ sparkleStyle.innerHTML = `
 @keyframes sparkleFloat {
 
     0% {
-
         opacity: 0;
 
         transform:
@@ -492,7 +481,6 @@ sparkleStyle.innerHTML = `
     }
 
     30% {
-
         opacity: 1;
 
         transform:
@@ -500,7 +488,6 @@ sparkleStyle.innerHTML = `
     }
 
     100% {
-
         opacity: 0;
 
         transform:
@@ -515,3 +502,28 @@ sparkleStyle.innerHTML = `
 document.head.appendChild(
     sparkleStyle
 );
+
+
+/* =========================
+   FINAL REVEAL
+========================= */
+
+function finalReveal() {
+
+    changeScreen(
+        "letter",
+        "final"
+    );
+
+    createSparkles();
+
+    setTimeout(
+        createSparkles,
+        500
+    );
+
+    setTimeout(
+        createSparkles,
+        1000
+    );
+}
