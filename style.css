@@ -21,11 +21,13 @@ body {
             rgba(255, 143, 190, 0.28),
             transparent 35%
         ),
+
         radial-gradient(
             circle at 20% 80%,
             rgba(255, 100, 170, 0.12),
             transparent 30%
         ),
+
         linear-gradient(
             145deg,
             #170d18,
@@ -136,9 +138,7 @@ body {
 
 .screen.active {
     display: flex;
-
-    animation:
-        screenIn 0.8s ease;
+    animation: screenIn 0.8s ease;
 }
 
 @keyframes screenIn {
@@ -324,8 +324,7 @@ button:hover {
     background:
         rgba(255, 255, 255, 0.18);
 
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 10px 30px
@@ -333,14 +332,12 @@ button:hover {
 }
 
 button:active {
-
-    transform:
-        scale(0.95);
+    transform: scale(0.95);
 }
 
 
 /* =========================
-   CHOICES
+   QUESTIONS
 ========================= */
 
 .number {
@@ -367,7 +364,7 @@ button:active {
 
     width: 100%;
 
-    max-width: 475px;
+    max-width: 380px;
 }
 
 
@@ -440,14 +437,13 @@ button:active {
 }
 
 .cant-wait {
-
     background:
         rgba(255, 120, 180, 0.15);
 }
 
 
 /* =========================
-   NOT INTERESTED REQUEST
+   REQUEST PAGE
 ========================= */
 
 .request-content {
@@ -508,8 +504,7 @@ button:active {
 
     font-size: 14px;
 
-    padding:
-        11px 20px;
+    padding: 11px 20px;
 }
 
 
@@ -887,9 +882,7 @@ button:active {
 ========================= */
 
 .final-content {
-
-    animation:
-        finalIn 1.2s ease;
+    animation: finalIn 1.2s ease;
 }
 
 @keyframes finalIn {
