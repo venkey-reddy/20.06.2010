@@ -15,26 +15,30 @@
     <!-- Floating hearts -->
     <div class="heart-container"></div>
 
+
     <!-- Main BGM -->
     <audio id="bgMusic" preload="auto">
         <source src="./bgm.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Memory BGM -->
+
+    <!-- Memory page BGM -->
     <audio id="memoryMusic" preload="auto">
         <source src="./memory-bgm.mp3" type="audio/mpeg">
     </audio>
 
 
-    <!-- =========================
-         INTRO
-    ========================== -->
+    <!-- =================================
+         INTRO PAGE
+    ================================== -->
 
     <section class="screen active" id="intro">
 
         <div class="content">
 
-            <div class="love-icon">♡</div>
+            <div class="love-icon">
+                ♡
+            </div>
 
             <p class="tiny">
                 A little secret...
@@ -59,9 +63,9 @@
     </section>
 
 
-    <!-- =========================
-         FIRST QUESTION
-    ========================== -->
+    <!-- =================================
+         QUESTION 1
+    ================================== -->
 
     <section class="screen" id="question1">
 
@@ -101,9 +105,9 @@
     </section>
 
 
-    <!-- =========================
-         TIMER
-    ========================== -->
+    <!-- =================================
+         TIMER PAGE
+    ================================== -->
 
     <section class="screen" id="timerPage">
 
@@ -142,9 +146,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          QUESTION AGAIN
-    ========================== -->
+    ================================== -->
 
     <section class="screen" id="question1Again">
 
@@ -184,9 +188,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          NOT INTERESTED PAGE
-    ========================== -->
+    ================================== -->
 
     <section class="screen" id="notInterestedPage">
 
@@ -227,9 +231,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          MEMORY PAGE
-    ========================== -->
+    ================================== -->
 
     <section class="screen memory-screen" id="memoryPage">
 
@@ -271,39 +275,100 @@
             </div>
 
 
-            <!-- FIVE PHOTOS -->
+            <!-- =================================
+                 MEMORY PHOTOS
+            ================================== -->
 
             <div class="memory-gallery">
 
-                <div class="memory-photo photo1">
+
+                <div
+                    class="memory-photo photo1"
+                    onclick="openPhoto('./image1.png')">
+
                     <img
                         src="./image1.png"
                         alt="Memory 1">
+
                 </div>
 
-                <div class="memory-photo photo2">
+
+                <div
+                    class="memory-photo photo2"
+                    onclick="openPhoto('./image2.png')">
+
                     <img
                         src="./image2.png"
                         alt="Memory 2">
+
                 </div>
 
-                <div class="memory-photo photo3">
+
+                <div
+                    class="memory-photo photo3"
+                    onclick="openPhoto('./image3.png')">
+
                     <img
                         src="./image3.png"
                         alt="Memory 3">
+
                 </div>
 
-                <div class="memory-photo photo4">
+
+                <div
+                    class="memory-photo photo4"
+                    onclick="openPhoto('./image4.png')">
+
                     <img
                         src="./image4.png"
                         alt="Memory 4">
+
                 </div>
 
-                <div class="memory-photo photo5">
+
+                <div
+                    class="memory-photo photo5"
+                    onclick="openPhoto('./image5.png')">
+
                     <img
                         src="./image5.png"
                         alt="Memory 5">
+
                 </div>
+
+
+                <div
+                    class="memory-photo photo6"
+                    onclick="openPhoto('./image6.png')">
+
+                    <img
+                        src="./image6.png"
+                        alt="Memory 6">
+
+                </div>
+
+
+                <div
+                    class="memory-photo photo7"
+                    onclick="openPhoto('./image7.png')">
+
+                    <img
+                        src="./image7.png"
+                        alt="Memory 7">
+
+                </div>
+
+
+                <div
+                    class="memory-photo photo8"
+                    onclick="openPhoto('./image8.png')">
+
+                    <img
+                        src="./image8.png"
+                        alt="Memory 8">
+
+                </div>
+
 
             </div>
 
@@ -319,9 +384,71 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
+         PHOTO FULLSCREEN VIEWER
+    ================================== -->
+
+    <div
+        id="photoViewer"
+        class="photo-viewer"
+        onclick="closePhoto(event)">
+
+
+        <!-- Close -->
+
+        <button
+            class="photo-close"
+            onclick="closePhoto(event)">
+
+            ✕
+
+        </button>
+
+
+        <!-- Zoom out -->
+
+        <button
+            class="zoom-button zoom-out"
+            onclick="zoomPhoto(-0.2, event)">
+
+            −
+
+        </button>
+
+
+        <!-- Selected image -->
+
+        <div class="photo-viewer-image-box">
+
+            <img
+                id="selectedPhoto"
+                src=""
+                alt="Selected memory">
+
+        </div>
+
+
+        <!-- Zoom in -->
+
+        <button
+            class="zoom-button zoom-in"
+            onclick="zoomPhoto(0.2, event)">
+
+            +
+
+        </button>
+
+
+        <p class="photo-hint">
+            Tap outside the photo to go back
+        </p>
+
+    </div>
+
+
+    <!-- =================================
          LETTER
-    ========================== -->
+    ================================== -->
 
     <section class="screen" id="letter">
 
@@ -369,9 +496,9 @@
     </section>
 
 
-    <!-- =========================
-         FINAL
-    ========================== -->
+    <!-- =================================
+         FINAL PAGE
+    ================================== -->
 
     <section class="screen" id="final">
 
