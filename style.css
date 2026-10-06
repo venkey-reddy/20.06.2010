@@ -37,9 +37,9 @@ body {
 }
 
 
-/* =========================
+/* =================================
    FLOATING HEARTS
-========================= */
+================================= */
 
 .heart-container {
     position: fixed;
@@ -54,12 +54,15 @@ body {
     bottom: -40px;
 
     color: #ff8fbd;
+
     font-size: 13px;
+
     opacity: 0;
 
     filter:
         drop-shadow(
-            0 0 6px rgba(255, 100, 170, 0.55)
+            0 0 6px
+            rgba(255, 100, 170, 0.55)
         );
 
     animation:
@@ -69,6 +72,7 @@ body {
 @keyframes heartRise {
 
     0% {
+
         transform:
             translate3d(0, 0, 0)
             rotate(0deg)
@@ -82,6 +86,7 @@ body {
     }
 
     35% {
+
         transform:
             translate3d(
                 var(--drift1),
@@ -93,6 +98,7 @@ body {
     }
 
     65% {
+
         transform:
             translate3d(
                 var(--drift2),
@@ -104,6 +110,7 @@ body {
     }
 
     100% {
+
         transform:
             translate3d(
                 var(--drift3),
@@ -118,17 +125,20 @@ body {
 }
 
 
-/* =========================
+/* =================================
    SCREENS
-========================= */
+================================= */
 
 .screen {
+
     position: fixed;
+
     inset: 0;
 
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 25px;
@@ -137,49 +147,64 @@ body {
 }
 
 .screen.active {
+
     display: flex;
-    animation: screenIn 0.8s ease;
+
+    animation:
+        screenIn 0.8s ease;
 }
 
 @keyframes screenIn {
 
     from {
+
         opacity: 0;
-        transform: scale(1.04);
+
+        transform:
+            scale(1.04);
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 }
 
 
-/* =========================
+/* =================================
    CONTENT
-========================= */
+================================= */
 
 .content {
+
     width: 100%;
+
     max-width: 520px;
+
     text-align: center;
 }
 
 
-/* =========================
+/* =================================
    INTRO
-========================= */
+================================= */
 
 .love-icon {
 
     width: 85px;
+
     height: 85px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 25px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -192,13 +217,17 @@ body {
         rgba(255, 130, 180, 0.08);
 
     border:
-        1px solid rgba(255, 160, 200, 0.2);
+        1px solid
+        rgba(255, 160, 200, 0.2);
 
     box-shadow:
-        0 0 35px rgba(255, 90, 160, 0.18);
+        0 0 35px
+        rgba(255, 90, 160, 0.18);
 
     animation:
-        softPulse 2.5s ease-in-out infinite;
+        softPulse 2.5s
+        ease-in-out
+        infinite;
 }
 
 @keyframes softPulse {
@@ -206,25 +235,29 @@ body {
     0%,
     100% {
 
-        transform: scale(1);
+        transform:
+            scale(1);
 
         box-shadow:
-            0 0 30px rgba(255, 90, 160, 0.15);
+            0 0 30px
+            rgba(255, 90, 160, 0.15);
     }
 
     50% {
 
-        transform: scale(1.06);
+        transform:
+            scale(1.06);
 
         box-shadow:
-            0 0 45px rgba(255, 90, 160, 0.3);
+            0 0 45px
+            rgba(255, 90, 160, 0.3);
     }
 }
 
 
-/* =========================
+/* =================================
    TEXT
-========================= */
+================================= */
 
 .tiny {
 
@@ -290,21 +323,23 @@ h2 {
 }
 
 
-/* =========================
+/* =================================
    BUTTONS
-========================= */
+================================= */
 
 button {
 
     border:
-        1px solid rgba(255, 255, 255, 0.3);
+        1px solid
+        rgba(255, 255, 255, 0.3);
 
     background:
         rgba(255, 255, 255, 0.08);
 
     color: white;
 
-    padding: 15px 24px;
+    padding:
+        15px 24px;
 
     border-radius: 50px;
 
@@ -314,7 +349,8 @@ button {
 
     transition: 0.3s;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 
     margin: 6px;
 }
@@ -324,7 +360,8 @@ button:hover {
     background:
         rgba(255, 255, 255, 0.18);
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 10px 30px
@@ -332,13 +369,15 @@ button:hover {
 }
 
 button:active {
-    transform: scale(0.95);
+
+    transform:
+        scale(0.95);
 }
 
 
-/* =========================
+/* =================================
    QUESTIONS
-========================= */
+================================= */
 
 .number {
 
@@ -368,51 +407,62 @@ button:active {
 }
 
 
-/* =========================
+/* =================================
    TIMER
-========================= */
+================================= */
 
 .timer-content {
+
     text-align: center;
 }
 
 .timer-circle {
 
     width: 190px;
+
     height: 190px;
 
-    margin: 30px auto;
+    margin:
+        30px auto;
 
     border-radius: 50%;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background:
         rgba(255, 130, 180, 0.08);
 
     border:
-        3px solid rgba(255, 159, 205, 0.5);
+        3px solid
+        rgba(255, 159, 205, 0.5);
 
     box-shadow:
         0 0 50px
         rgba(255, 90, 170, 0.22);
 
     animation:
-        timerPulse 2s ease-in-out infinite;
+        timerPulse 2s
+        ease-in-out
+        infinite;
 }
 
 @keyframes timerPulse {
 
     0%,
     100% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 
     50% {
-        transform: scale(1.04);
+
+        transform:
+            scale(1.04);
     }
 }
 
@@ -437,31 +487,36 @@ button:active {
 }
 
 .cant-wait {
+
     background:
         rgba(255, 120, 180, 0.15);
 }
 
 
-/* =========================
+/* =================================
    REQUEST PAGE
-========================= */
+================================= */
 
 .request-content {
+
     text-align: center;
 }
 
 .request-heart {
 
     width: 100%;
+
     max-width: 700px;
 
     height: 130px;
 
-    margin: 0 auto 30px;
+    margin:
+        0 auto 30px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-size: 75px;
@@ -474,18 +529,24 @@ button:active {
         rgba(255, 80, 160, 0.18);
 
     animation:
-        requestHeartPulse 2s ease-in-out infinite;
+        requestHeartPulse 2s
+        ease-in-out
+        infinite;
 }
 
 @keyframes requestHeartPulse {
 
     0%,
     100% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 
     50% {
-        transform: scale(1.03);
+
+        transform:
+            scale(1.03);
     }
 }
 
@@ -504,13 +565,14 @@ button:active {
 
     font-size: 14px;
 
-    padding: 11px 20px;
+    padding:
+        11px 20px;
 }
 
 
-/* =========================
+/* =================================
    MEMORY PAGE
-========================= */
+================================= */
 
 .memory-screen {
 
@@ -525,7 +587,7 @@ button:active {
 
     width: 100%;
 
-    max-width: 900px;
+    max-width: 1000px;
 
     min-height: 100vh;
 
@@ -566,13 +628,19 @@ button:active {
 @keyframes memoryTitleIn {
 
     from {
+
         opacity: 0;
-        transform: translateY(-30px);
+
+        transform:
+            translateY(-30px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -594,9 +662,9 @@ button:active {
 }
 
 
-/* =========================
+/* =================================
    VIDEO
-========================= */
+================================= */
 
 .memory-video-box {
 
@@ -615,7 +683,8 @@ button:active {
         rgba(255, 255, 255, 0.08);
 
     border:
-        1px solid rgba(255, 190, 220, 0.25);
+        1px solid
+        rgba(255, 190, 220, 0.25);
 
     box-shadow:
         0 25px 70px
@@ -628,6 +697,7 @@ button:active {
 @keyframes memoryVideoIn {
 
     from {
+
         opacity: 0;
 
         transform:
@@ -636,6 +706,7 @@ button:active {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -654,13 +725,14 @@ button:active {
 
     max-height: 65vh;
 
-    background: black;
+    background:
+        black;
 }
 
 
-/* =========================
-   MEMORY PHOTOS
-========================= */
+/* =================================
+   MEMORY GALLERY
+================================= */
 
 .memory-gallery {
 
@@ -668,120 +740,429 @@ button:active {
 
     width: 100%;
 
-    height: 360px;
+    max-width: 900px;
+
+    height: 540px;
 
     margin:
         20px auto 35px;
 }
+
+
+/* =================================
+   PHOTO CARDS
+================================= */
 
 .memory-photo {
 
     position: absolute;
 
     width: 170px;
-    height: 210px;
+
+    height: 220px;
 
     padding: 8px;
 
-    background: #fff;
+    background:
+        #ffffff;
+
+    border-radius: 5px;
+
+    cursor: pointer;
 
     box-shadow:
         0 18px 45px
-        rgba(0, 0, 0, 0.4);
+        rgba(0, 0, 0, 0.45);
 
-    border-radius: 4px;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 
     animation:
-        memoryFloat 5s ease-in-out infinite;
+        memoryFloat 4.5s
+        ease-in-out
+        infinite;
+
+    overflow: hidden;
 }
 
 .memory-photo img {
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
     display: block;
+
+    pointer-events: none;
 }
+
+.memory-photo:hover {
+
+    z-index: 20;
+
+    box-shadow:
+        0 25px 60px
+        rgba(255, 100, 180, 0.35);
+
+    transform:
+        scale(1.08)
+        rotate(0deg);
+}
+
+
+/* =================================
+   PHOTO POSITIONS
+================================= */
 
 .photo1 {
 
-    left: 8%;
-    top: 35px;
+    left: 3%;
 
-    transform: rotate(-9deg);
+    top: 60px;
 
-    animation-delay: 0s;
+    transform:
+        rotate(-10deg);
+
+    animation-delay:
+        0s;
 }
 
 .photo2 {
 
-    left: 28%;
-    top: 90px;
+    left: 19%;
 
-    transform: rotate(6deg);
+    top: 190px;
 
-    animation-delay: 0.8s;
+    transform:
+        rotate(6deg);
+
+    animation-delay:
+        0.6s;
 }
 
 .photo3 {
 
-    right: 28%;
-    top: 50px;
+    left: 37%;
 
-    transform: rotate(-5deg);
+    top: 40px;
 
-    animation-delay: 1.5s;
+    transform:
+        rotate(-3deg);
+
+    animation-delay:
+        1.2s;
+
+    z-index: 4;
 }
 
 .photo4 {
 
-    right: 8%;
-    top: 110px;
+    right: 28%;
 
-    transform: rotate(9deg);
+    top: 180px;
 
-    animation-delay: 2.2s;
+    transform:
+        rotate(7deg);
+
+    animation-delay:
+        1.8s;
 }
 
 .photo5 {
 
-    left: 43%;
-    top: 5px;
+    right: 7%;
 
-    transform: rotate(2deg);
+    top: 65px;
 
-    animation-delay: 3s;
+    transform:
+        rotate(10deg);
+
+    animation-delay:
+        2.4s;
 }
+
+.photo6 {
+
+    left: 10%;
+
+    top: 330px;
+
+    transform:
+        rotate(4deg);
+
+    animation-delay:
+        3s;
+}
+
+.photo7 {
+
+    left: 42%;
+
+    top: 310px;
+
+    transform:
+        rotate(-7deg);
+
+    animation-delay:
+        3.6s;
+}
+
+.photo8 {
+
+    right: 5%;
+
+    top: 330px;
+
+    transform:
+        rotate(-5deg);
+
+    animation-delay:
+        4.2s;
+}
+
+
+/* =================================
+   PHOTO FLOAT
+================================= */
 
 @keyframes memoryFloat {
 
     0%,
     100% {
+
         margin-top: 0;
+
+    }
+
+    25% {
+
+        margin-top:
+            -10px;
+
     }
 
     50% {
-        margin-top: -18px;
+
+        margin-top:
+            -20px;
+
+    }
+
+    75% {
+
+        margin-top:
+            -8px;
+
     }
 }
 
-.memory-text {
 
-    font-size: 19px;
+/* =================================
+   FULLSCREEN PHOTO VIEWER
+================================= */
 
-    line-height: 1.8;
+.photo-viewer {
 
-    opacity: 0.75;
+    position: fixed;
 
-    margin-top: 30px;
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(10, 3, 12, 0.93);
+
+    backdrop-filter:
+        blur(12px);
+
+    z-index: 100;
+
+    animation:
+        viewerIn 0.35s ease;
+}
+
+.photo-viewer.active {
+
+    display: flex;
+}
+
+@keyframes viewerIn {
+
+    from {
+
+        opacity: 0;
+    }
+
+    to {
+
+        opacity: 1;
+    }
 }
 
 
-/* =========================
+/* =================================
+   SELECTED PHOTO
+================================= */
+
+.photo-viewer-image-box {
+
+    width:
+        min(82vw, 750px);
+
+    height:
+        min(78vh, 750px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+#selectedPhoto {
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 0, 0, 0.65);
+
+    transform:
+        scale(1);
+
+    transition:
+        transform 0.25s ease;
+
+    pointer-events: auto;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+/* =================================
+   CLOSE BUTTON
+================================= */
+
+.photo-close {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 30px;
+
+    width: 48px;
+
+    height: 48px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.3);
+
+    font-size: 20px;
+
+    z-index: 110;
+}
+
+
+/* =================================
+   ZOOM BUTTONS
+================================= */
+
+.zoom-button {
+
+    position: absolute;
+
+    width: 50px;
+
+    height: 50px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.3);
+
+    font-size: 28px;
+
+    z-index: 110;
+}
+
+.zoom-in {
+
+    right: 30px;
+
+    bottom: 80px;
+}
+
+.zoom-out {
+
+    left: 30px;
+
+    bottom: 80px;
+}
+
+.photo-hint {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+
+/* =================================
    LETTER
-========================= */
+================================= */
 
 .letter {
 
@@ -804,7 +1185,8 @@ button:active {
 
     border-radius: 15px;
 
-    padding: 40px 30px;
+    padding:
+        40px 30px;
 
     text-align: center;
 
@@ -819,6 +1201,7 @@ button:active {
 @keyframes paperOpen {
 
     from {
+
         opacity: 0;
 
         transform:
@@ -827,6 +1210,7 @@ button:active {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -843,7 +1227,9 @@ button:active {
 }
 
 .paper h2 {
-    color: #c24c82;
+
+    color:
+        #c24c82;
 }
 
 .paper p {
@@ -852,7 +1238,8 @@ button:active {
 
     line-height: 1.7;
 
-    margin: 18px 0;
+    margin:
+        18px 0;
 }
 
 .line {
@@ -877,17 +1264,20 @@ button:active {
 }
 
 
-/* =========================
+/* =================================
    FINAL
-========================= */
+================================= */
 
 .final-content {
-    animation: finalIn 1.2s ease;
+
+    animation:
+        finalIn 1.2s ease;
 }
 
 @keyframes finalIn {
 
     from {
+
         opacity: 0;
 
         transform:
@@ -896,6 +1286,7 @@ button:active {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -909,7 +1300,9 @@ button:active {
     font-size: 90px;
 
     animation:
-        floating 3s ease-in-out infinite;
+        floating 3s
+        ease-in-out
+        infinite;
 
     margin-bottom: 20px;
 }
@@ -918,11 +1311,13 @@ button:active {
 
     0%,
     100% {
+
         transform:
             translateY(0);
     }
 
     50% {
+
         transform:
             translateY(-15px);
     }
@@ -953,7 +1348,8 @@ button:active {
 
     opacity: 0.8;
 
-    margin: 15px auto;
+    margin:
+        15px auto;
 
     max-width: 400px;
 }
@@ -972,10 +1368,12 @@ button:active {
 
     0%,
     100% {
+
         opacity: 0.4;
     }
 
     50% {
+
         opacity: 1;
     }
 }
@@ -990,23 +1388,26 @@ button:active {
 }
 
 
-/* =========================
+/* =================================
    MOBILE
-========================= */
+================================= */
 
 @media (max-width: 600px) {
 
     h1 {
+
         font-size: 40px;
     }
 
     h2 {
+
         font-size: 27px;
     }
 
     .love-icon {
 
         width: 75px;
+
         height: 75px;
 
         font-size: 55px;
@@ -1023,10 +1424,12 @@ button:active {
     .timer-circle {
 
         width: 160px;
+
         height: 160px;
     }
 
     #timer {
+
         font-size: 35px;
     }
 
@@ -1036,6 +1439,9 @@ button:active {
 
         font-size: 65px;
     }
+
+
+    /* Mobile memory */
 
     .memory-content {
 
@@ -1050,37 +1456,112 @@ button:active {
 
     .memory-gallery {
 
-        height: 500px;
+        height: 650px;
     }
 
     .memory-photo {
 
-        width: 125px;
-        height: 160px;
+        width: 115px;
+
+        height: 155px;
     }
 
     .photo1 {
+
         left: 2%;
-        top: 40px;
+
+        top: 30px;
     }
 
     .photo2 {
+
         left: 25%;
-        top: 150px;
+
+        top: 120px;
     }
 
     .photo3 {
-        right: 25%;
-        top: 40px;
+
+        right: 3%;
+
+        left: auto;
+
+        top: 35px;
     }
 
     .photo4 {
-        right: 2%;
-        top: 160px;
+
+        left: 5%;
+
+        right: auto;
+
+        top: 280px;
     }
 
     .photo5 {
-        left: 37%;
-        top: 250px;
+
+        right: 5%;
+
+        top: 260px;
     }
+
+    .photo6 {
+
+        left: 27%;
+
+        top: 360px;
+    }
+
+    .photo7 {
+
+        left: 3%;
+
+        top: 480px;
+    }
+
+    .photo8 {
+
+        right: 3%;
+
+        top: 460px;
+    }
+
+
+    /* Mobile viewer */
+
+    .photo-viewer-image-box {
+
+        width: 92vw;
+
+        height: 75vh;
+    }
+
+    .photo-close {
+
+        top: 15px;
+
+        right: 15px;
+    }
+
+    .zoom-in {
+
+        right: 15px;
+
+        bottom: 65px;
+    }
+
+    .zoom-out {
+
+        left: 15px;
+
+        bottom: 65px;
+    }
+
+    .photo-hint {
+
+        bottom: 15px;
+
+        font-size: 11px;
+    }
+
 }
