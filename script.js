@@ -219,6 +219,7 @@ function notInterested(currentPage) {
             "notInterestedPage"
         );
 
+
     }, 700);
 }
 
@@ -293,75 +294,13 @@ function goBackQuestion() {
    MEMORY PAGE
 ================================= */
 
+// Remember the exact page that opened the memory gallery.
 let memoryPreviousPage = "notInterestedPage";
-
-
-/* =================================
-   BACK FROM MEMORY PAGE
-================================= */
-
-function backFromMemory() {
-
-    const memoryMusic =
-        document.getElementById("memoryMusic");
-
-    const mainMusic =
-        document.getElementById("bgMusic");
-
-    const video =
-        document.getElementById("kavyaVideo");
-
-
-    // Stop memory music and reset it.
-
-    memoryMusic.pause();
-
-    memoryMusic.currentTime = 0;
-
-
-    // Stop the memory video.
-
-    if (video) {
-
-        video.pause();
-
-        video.currentTime = 0;
-
-    }
-
-
-    // Return to the previous page.
-
-    changeScreen(
-        "memoryPage",
-        memoryPreviousPage
-    );
-
-
-    // Resume original background music.
-
-    mainMusic.volume = 0.65;
-
-    mainMusic.play().catch(error => {
-
-        console.log(
-            "Main BGM could not resume:",
-            error
-        );
-
-    });
-
-}
-
-
-/* =================================
-   OPEN MEMORY PAGE
-================================= */
 
 function openMemoryPage(previousPage) {
 
+    // Save the caller so the gallery Back button returns there.
     memoryPreviousPage = previousPage;
-
 
     clearInterval(
         timerInterval
@@ -416,6 +355,39 @@ function openMemoryPage(previousPage) {
         playMemoryVideo();
 
     }, 600);
+}
+
+
+/* =================================
+   BACK FROM MEMORY PAGE
+================================= */
+
+function backFromMemory() {
+
+    const memoryMusic =
+        document.getElementById("memoryMusic");
+
+    const mainMusic =
+        document.getElementById("bgMusic");
+
+    const video =
+        document.getElementById("kavyaVideo");
+
+    // Stop the memory audio/video before leaving the gallery.
+    memoryMusic.pause();
+
+    if (video) {
+        video.pause();
+    }
+
+    // Return to the exact page that opened the gallery.
+    changeScreen("memoryPage", memoryPreviousPage);
+
+    // Resume the original background track without resetting it.
+    mainMusic.volume = 0.65;
+    mainMusic.play().catch(error => {
+        console.log("Main BGM could not resume:", error);
+    });
 }
 
 
