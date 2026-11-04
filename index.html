@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,23 +16,17 @@
     <!-- Floating hearts -->
     <div class="heart-container"></div>
 
-
     <!-- Main BGM -->
     <audio id="bgMusic" preload="auto">
         <source src="./bgm.mp3" type="audio/mpeg">
     </audio>
-
 
     <!-- Memory page BGM -->
     <audio id="memoryMusic" preload="auto">
         <source src="./memory-bgm.mp3" type="audio/mpeg">
     </audio>
 
-
-    <!-- =================================
-         INTRO PAGE
-    ================================== -->
-
+    <!-- INTRO PAGE -->
     <section class="screen active" id="intro">
 
         <div class="content">
@@ -63,10 +58,7 @@
     </section>
 
 
-    <!-- =================================
-         QUESTION 1
-    ================================== -->
-
+    <!-- QUESTION 1 -->
     <section class="screen" id="question1">
 
         <div class="content">
@@ -105,10 +97,7 @@
     </section>
 
 
-    <!-- =================================
-         TIMER PAGE
-    ================================== -->
-
+    <!-- TIMER PAGE -->
     <section class="screen" id="timerPage">
 
         <div class="content timer-content">
@@ -146,10 +135,7 @@
     </section>
 
 
-    <!-- =================================
-         QUESTION AGAIN
-    ================================== -->
-
+    <!-- QUESTION AGAIN -->
     <section class="screen" id="question1Again">
 
         <div class="content">
@@ -188,10 +174,7 @@
     </section>
 
 
-    <!-- =================================
-         NOT INTERESTED PAGE
-    ================================== -->
-
+    <!-- NOT INTERESTED PAGE -->
     <section class="screen" id="notInterestedPage">
 
         <div class="content request-content">
@@ -231,10 +214,7 @@
     </section>
 
 
-    <!-- =================================
-         MEMORY PAGE
-    ================================== -->
-
+    <!-- MEMORY PAGE -->
     <section class="screen memory-screen" id="memoryPage">
 
         <div class="memory-overlay"></div>
@@ -253,9 +233,17 @@
 
             </div>
 
+            <!-- NEW BACK BUTTON -->
+            <button
+                class="go-back-button memory-back-button"
+                onclick="backFromMemory()">
+
+                ← Go back
+
+            </button>
+
 
             <!-- VIDEO -->
-
             <div class="memory-video-box">
 
                 <video
@@ -275,12 +263,8 @@
             </div>
 
 
-            <!-- =================================
-                 MEMORY PHOTOS
-            ================================== -->
-
+            <!-- MEMORY PHOTOS -->
             <div class="memory-gallery">
-
 
                 <div
                     class="memory-photo photo1"
@@ -369,25 +353,16 @@
 
                 </div>
 
-
             </div>
 
-
-            <p class="memory-text">
-                like to stay with you......
-                <br>
-                💗
-            </p>
+            <!-- Original bottom memory text removed -->
 
         </div>
 
     </section>
 
 
-    <!-- =================================
-         PHOTO FULLSCREEN VIEWER
-    ================================== -->
-
+    <!-- PHOTO FULLSCREEN VIEWER -->
     <div
         id="photoViewer"
         class="photo-viewer"
@@ -395,7 +370,6 @@
 
 
         <!-- Close -->
-
         <button
             class="photo-close"
             onclick="closePhoto(event)">
@@ -406,7 +380,6 @@
 
 
         <!-- Zoom out -->
-
         <button
             class="zoom-button zoom-out"
             onclick="zoomPhoto(-0.2, event)">
@@ -417,7 +390,6 @@
 
 
         <!-- Selected image -->
-
         <div class="photo-viewer-image-box">
 
             <img
@@ -429,7 +401,6 @@
 
 
         <!-- Zoom in -->
-
         <button
             class="zoom-button zoom-in"
             onclick="zoomPhoto(0.2, event)">
@@ -446,10 +417,7 @@
     </div>
 
 
-    <!-- =================================
-         LETTER
-    ================================== -->
-
+    <!-- LETTER -->
     <section class="screen" id="letter">
 
         <div class="letter">
@@ -496,10 +464,7 @@
     </section>
 
 
-    <!-- =================================
-         FINAL PAGE
-    ================================== -->
-
+    <!-- FINAL PAGE -->
     <section class="screen" id="final">
 
         <div class="content final-content">
@@ -533,6 +498,7 @@
     </section>
 
 
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
