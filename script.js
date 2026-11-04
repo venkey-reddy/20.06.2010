@@ -1,3 +1,4 @@
+
 /* =================================
    SCREEN CHANGE
    Only ONE screen is active.
@@ -292,7 +293,75 @@ function goBackQuestion() {
    MEMORY PAGE
 ================================= */
 
+let memoryPreviousPage = "notInterestedPage";
+
+
+/* =================================
+   BACK FROM MEMORY PAGE
+================================= */
+
+function backFromMemory() {
+
+    const memoryMusic =
+        document.getElementById("memoryMusic");
+
+    const mainMusic =
+        document.getElementById("bgMusic");
+
+    const video =
+        document.getElementById("kavyaVideo");
+
+
+    // Stop memory music and reset it.
+
+    memoryMusic.pause();
+
+    memoryMusic.currentTime = 0;
+
+
+    // Stop the memory video.
+
+    if (video) {
+
+        video.pause();
+
+        video.currentTime = 0;
+
+    }
+
+
+    // Return to the previous page.
+
+    changeScreen(
+        "memoryPage",
+        memoryPreviousPage
+    );
+
+
+    // Resume original background music.
+
+    mainMusic.volume = 0.65;
+
+    mainMusic.play().catch(error => {
+
+        console.log(
+            "Main BGM could not resume:",
+            error
+        );
+
+    });
+
+}
+
+
+/* =================================
+   OPEN MEMORY PAGE
+================================= */
+
 function openMemoryPage(previousPage) {
+
+    memoryPreviousPage = previousPage;
+
 
     clearInterval(
         timerInterval
