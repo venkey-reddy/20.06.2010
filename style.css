@@ -663,11 +663,12 @@ button:active {
 }
 
 
-/* Back button on memory page */
-
+/* Back button inside the memory gallery */
 .memory-back-button {
-
-    margin: 0 auto 30px;
+    display: inline-block;
+    margin: -12px auto 28px;
+    position: relative;
+    z-index: 5;
 }
 
 
@@ -966,7 +967,6 @@ button:active {
             -8px;
 
     }
-
 }
 
 
